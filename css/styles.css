@@ -1,0 +1,289 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;  
+    color: #b3b2af;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*
+.montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-family: proxima_nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+*/
+
+body{
+    background-color: #000000;
+    height: 100vh;   
+       
+}
+
+main{
+    display: flex;
+    gap: 8px;
+    padding: 8px 8px 0 8px;
+    height: calc(100% - 90px);
+}
+
+main > section{
+    border-radius: 8px;
+}
+
+footer{
+    border: 1px lightblue solid;
+    height: 90px;
+}
+
+a{
+    text-decoration: none;
+}
+
+iframe{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+}
+
+
+.navigation{
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.navigation > div{
+    background-color: #121212;
+    border-radius: 8px;
+}
+
+.nav{
+    height: 112px;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 25px;
+}
+
+.nav span{
+    background-color: transparent;    
+    height: 50%;
+    font-size: medium;
+    font-weight: 700;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: start;
+}
+
+
+.library{
+    height: calc(100% - 112px);
+    padding: 8px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.lib-1{
+    padding-left: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lib-1 > div{
+    display: flex;
+    align-items: center;
+    font-size: medium;
+    font-weight: 700;
+    gap: 8px;
+}
+
+.circle{
+    background-color: transparent;   
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.lib-2{
+    display: flex;
+    gap: 5px;
+    padding-top: 8px;
+    padding-left: 8px;
+}
+
+.lib-2 > span{
+    background-color: #2a2a2a;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+    padding: 0 15px;
+    height: 32px;
+}
+
+.lib-2 a{
+    color: white;
+    font-size: small;
+    font-weight: 600;
+}
+
+.lib-3{
+    border: 1px crimson;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+}
+
+.lib-3 nav{
+    padding: 0px 15px 0px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lib-3 nav div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.lib{
+    display: flex;
+    flex-direction: column;
+}
+
+.lib-element{
+    background-color: transparent;
+    border: 0px;
+    height: 65px;
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/*.lib-element */img{
+    height: 100%;
+    border-radius: 3px;
+}
+
+.lib-element span{
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.lib-element h4{
+    display: flex;
+    justify-items: start;
+    font-size: medium;
+    font-weight: 400;
+    color: white;
+}
+
+.lib-element p{
+    display: flex;
+    justify-items: start;
+    font-size: small;
+    font-weight: 500;
+}
+
+
+.main{
+    width: calc(100% - 420px);
+    background-color: #453286;
+}
+
+
+.player{
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.player-1{
+    border: 1px solid orangered;
+    height: 100%;
+    width: 30%;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.player-1 span{
+    padding-left: 15px;
+}
+
+.player-1 h4{
+    font-size: small;
+    color: white;
+}
+
+.player-1 p{
+    font-size: small;
+}
+
+
+.player-2{
+    border: 1px solid orangered;
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.player-3{
+    border: 1px solid orangered;
+    height: 100%;
+    width: 30%;
+}
+
+.hover-white:hover{
+    cursor: pointer;
+    a, i{
+        color:white;
+        transition: 0.4s;
+    }
+}
+
+.circle:hover{
+    background-color: #1f1f1f;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.lib-2 > span:hover{
+    background-color: #333333;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lib-element:hover{
+    background-color: #1f1f1f; 
+    cursor: pointer;
+}
+
+.lib-element:focus{
+    background-color: #2a2a2a;
+}
+
+.lib-element:focus:hover{
+    background-color: #484848;
+}
