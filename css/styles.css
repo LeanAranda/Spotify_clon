@@ -34,7 +34,6 @@ main > section{
 }
 
 footer{
-    border: 1px lightblue solid;
     height: 90px;
 }
 
@@ -135,7 +134,6 @@ iframe{
 }
 
 .lib-3{
-    border: 1px crimson;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -151,9 +149,9 @@ iframe{
 }
 
 .lib-3 nav div{
+    gap: 5px;
     display: flex;
     align-items: center;
-    gap: 5px;
 }
 
 .lib{
@@ -201,9 +199,87 @@ iframe{
 
 .main{
     width: calc(100% - 420px);
-    background-color: #453286;
+    /*background-color: #453286;*/
+    background-color: #121212;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
 }
 
+.main-nav{
+    border-radius: 8px 8px 0px 0px;
+    height: 65px;
+}
+
+.main-title{
+    height: 33%;
+}
+
+.main-list{
+    border-radius: 0px 0px 8px 8px;
+    height: calc(67% - 65px);
+}
+
+.list-options{
+    height: 100px;
+}
+
+.list-table{
+    display: flex;
+    padding: 0 1.5%;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+thead th,thead td {
+	height: 35px;
+    font-size: small;
+    font-weight: 600;
+}
+
+tbody th,tbody td {
+	height: 55px;
+}
+
+tbody tr {
+    border-radius: 8px;
+}
+
+th:nth-child(1){
+    width: 4%;
+    text-align: center;
+}
+
+th:nth-child(2){
+    width: 35%;
+    text-align: start;
+}
+
+th:nth-child(3){
+    width: 15%;
+    text-align: end;
+}
+
+th:nth-child(5){
+    width: 25%;
+    text-align: start;
+}
+
+th:nth-child(6){
+    width: 6%;
+    text-align: center;
+}
+
+tbody th:nth-child(1){
+    border-radius: 8px 0px 0px 8px;
+}
+
+tbody th:nth-child(6){
+    border-radius: 0px 8px 8px 0px ;
+}
 
 .player{
     height: 100%;
@@ -216,7 +292,6 @@ iframe{
 
 
 .player-1{
-    border: 1px solid orangered;
     height: 100%;
     width: 30%;
     padding: 5px;
@@ -239,7 +314,6 @@ iframe{
 
 
 .player-2{
-    border: 1px solid orangered;
     height: 100%;
     width: 40%;
     display: flex;
@@ -250,7 +324,6 @@ iframe{
 
 
 .player-3{
-    border: 1px solid orangered;
     height: 100%;
     width: 30%;
 }
@@ -275,15 +348,15 @@ iframe{
     transition: 0.3s;
 }
 
-.lib-element:hover{
+.selectable:hover{
     background-color: #1f1f1f; 
     cursor: pointer;
 }
 
-.lib-element:focus{
+.selectable:focus{
     background-color: #2a2a2a;
 }
 
-.lib-element:focus:hover{
+.selectable:focus:hover{
     background-color: #484848;
 }
