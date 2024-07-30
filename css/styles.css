@@ -47,6 +47,10 @@ iframe{
     border-radius: 8px;
 }
 
+h1{
+    color: white;
+    font-size: 90px;
+}
 
 .navigation{
     width: 420px;
@@ -209,25 +213,93 @@ iframe{
 .main-nav{
     border-radius: 8px 8px 0px 0px;
     height: 65px;
+    background-color: #503a9b;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.main-nav span{
+    background-color: #00000073;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .main-title{
     height: 33%;
+    background: rgb(80,58,155);
+    background: linear-gradient(180deg, rgba(80,58,155,1) 0%, rgba(43,30,83,1) 100%);  
+    display: flex;
+    align-items: end;
+    padding: 30px 20px 20px 20px;
+    gap: 20px;
+}
+
+.data{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.data p{
+    font-size: small;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.651);
+}
+
+.data span{
+    font-size: medium;
+    color: white;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.data img{
+    height: 25px;
 }
 
 .main-list{
     border-radius: 0px 0px 8px 8px;
     height: calc(67% - 65px);
+    background: rgb(32,24,62);
+    background: linear-gradient(180deg, rgba(32,24,62,1) 0%, rgba(18,18,18,1) 55%);
 }
 
 .list-options{
     height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.button{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #1ed760;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button i{
+    color: #000000;
 }
 
 .list-table{
     display: flex;
     padding: 0 1.5%;
 }
+
 
 table {
 	width: 100%;
@@ -238,6 +310,7 @@ thead th,thead td {
 	height: 35px;
     font-size: small;
     font-weight: 600;
+    border-bottom: 1px rgba(82, 82, 82, 0.205) solid;
 }
 
 tbody th,tbody td {
@@ -279,6 +352,30 @@ tbody th:nth-child(1){
 
 tbody th:nth-child(6){
     border-radius: 0px 8px 8px 0px ;
+}
+
+tbody h3{
+    font-size: medium;
+    font-weight: 500;
+    color: white;
+}
+
+tbody h4{
+    font-size: medium;
+    font-weight: 400;
+}
+
+tbody p{
+    font-size: small;
+    font-weight: 500;
+}
+
+
+.song{
+    height: 55px;
+    display: flex;
+    padding: 8px;
+    gap: 10px;
 }
 
 .player{
@@ -351,6 +448,12 @@ tbody th:nth-child(6){
 .selectable:hover{
     background-color: #1f1f1f; 
     cursor: pointer;
+}
+
+.button:hover{
+    background-color: #5de28c; 
+    cursor: pointer;
+    transform: scale(1.05);
 }
 
 .selectable:focus{
