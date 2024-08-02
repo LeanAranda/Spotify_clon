@@ -49,7 +49,10 @@ iframe{
 
 h1{
     color: white;
+    /*
     font-size: 8vh;
+    */
+    font-size: 400%;
 }
 
 .navigation{
@@ -298,86 +301,99 @@ h1{
 
 .list-table{
     display: flex;
+    flex-direction: column;
+}
+
+.table-header{
+    height: 35px;
+    width: 100%;
     padding: 0 1.5%;
 }
 
-
-table {
-	width: 100%;
-	border-collapse: collapse;
-}
-
-thead th,thead td {
-	height: 35px;
+.table-header div{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-size: small;
-    font-weight: 600;
-    border-bottom: 1px rgba(82, 82, 82, 0.205) solid;
+    font-weight: 700;
+    border-bottom: 0.1px #ffffff13 solid;
 }
 
-tbody th,tbody td {
-	height: 55px;
+.table-header div span{
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
-tbody tr {
-    border-radius: 8px;
+.songsList{
+    padding: 0 1.5%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1%;
 }
 
-th:nth-child(1){
-    width: 4%;
-    text-align: center;
+.table-song{
+    height: 55px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-th:nth-child(2){
-    width: 35%;
-    text-align: start;
+.table-song div{
+    font-size: medium;
+    font-weight: 500;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
-th:nth-child(3){
-    width: 15%;
-    text-align: end;
+.t1{
+    width: 5%;
+    justify-content: center;
 }
 
-th:nth-child(5){
-    width: 25%;
-    text-align: start;
+.t2{
+    width: 45%;
+    padding: 8px;
+    gap: 10px;
 }
 
-th:nth-child(6){
-    width: 6%;
-    text-align: center;
+.t2 span{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    overflow-x: hidden;
 }
 
-tbody th:nth-child(1){
-    border-radius: 8px 0px 0px 8px;
-}
-
-tbody th:nth-child(6){
-    border-radius: 0px 8px 8px 0px ;
-}
-
-tbody h3{
+.t2 h3{
     font-size: medium;
     font-weight: 500;
     color: white;
+    text-wrap: nowrap;
 }
 
-tbody h4{
-    font-size: medium;
-    font-weight: 400;
-}
-
-tbody p{
+.t2 p{
     font-size: small;
     font-weight: 500;
 }
 
+.t3{
+    width: 20%;
+    justify-content: end;
+    padding-right: 10%;
+}
 
-.song{
-    height: 55px;
-    display: flex;
-    padding: 8px;
-    gap: 10px;
-    text-wrap: nowrap;
+.t4{
+    width: 25%;
+}
+
+.t5{
+    width: 5%;
+    justify-content: center;
 }
 
 .player{

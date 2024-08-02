@@ -58,15 +58,15 @@
                         </div>
                     </nav>
                     <div class="lib">
-                        <!--
-                        <button class="lib-element selectable">
+                    <!--
+                        <button class="lib-element selectable" onclick="changePlaylist('AMdrkK7')">
                             <img src="assets/img/image.png" alt="">
                             <span>
                                 <h4>Album</h4>
                                 <p>Lista · Spotify</p>
                             </span>
                         </button>
-                        -->
+                    -->
                     </div>
                 </div>
             </div>
@@ -98,6 +98,34 @@
                 </div>
 
                 <div class="list-table">
+
+                    <div class="table-header">
+                        <div>
+                            <span class="t1"><i class="fa-solid fa-hashtag"></i></span>
+                            <span class="t2">Título</span>
+                            <span class="t3">Reproducciones</span>
+                            <span class="t4">Fecha en la que se añadió</span>
+                            <span class="t5"><i class="fa-regular fa-clock"></i></span>
+                        </div> 
+                    </div>
+                    <div class="songsList" id="songsList">
+                        <!--
+                        <button class="table-song selectable">
+                            <div class="t1">1</div>
+                            <div class="t2">
+                                <img src="assets/img/image.png" alt="">
+                                <span>
+                                    <h3>Canción</h3>
+                                    <p>Artista</p>
+                                </span>
+                            </div>
+                            <div class="t3">411.012</div>
+                            <div class="t4">Fecha</div>
+                            <div class="t5">3:18</div>
+                        </button>
+                        -->
+                    </div>
+                    <!--
                     <table>				
                         <thead>
                             <tr>
@@ -127,9 +155,11 @@
                                 <th><h4>Álbum</h4></th>
                                 <th><h4>3:18</h4></th>
                             </tr>
-                            -->
+                            
+                        
                         </tbody>
-                    </table>   
+                    </table> 
+                    -->  
                 </div>
             </div>
         </section>
@@ -146,7 +176,7 @@
                 </span>
             </div>
             <div class="player-2" id="player">
-                <audio controls>
+                <audio controls id="audio">
                     <source src="assets/mp3/I love a rainy night.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
