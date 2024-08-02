@@ -16,7 +16,7 @@
             <div class="nav">
                 <span class="hover-white">
                     <i class="fa-solid fa-house fa-lg"></i>
-                    <a href="#">Inicio</a>
+                    <a href="index.html">Inicio</a>
                 </span>
                 <span class="hover-white">
                     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
@@ -47,7 +47,7 @@
                         <a href="#">Álbumes</a>
                     </span>
                 </div>
-                <div class="lib-3">
+                <div class="lib-3" id="lib">
                     <nav>
                         <div class="hover-white circle">
                             <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
@@ -58,7 +58,7 @@
                         </div>
                     </nav>
                     <div class="lib">
-
+                        <!--
                         <button class="lib-element selectable">
                             <img src="assets/img/image.png" alt="">
                             <span>
@@ -66,7 +66,7 @@
                                 <p>Lista · Spotify</p>
                             </span>
                         </button>
-
+                        -->
                     </div>
                 </div>
             </div>
@@ -75,13 +75,15 @@
             <nav class="main-nav">
                 <span class="selectable"><i class="fa-regular fa-user"></i></span>
             </nav>
-            <div class="main-title">
+            <div class="main-title" id="title">
+                <!--
                 <img src="assets/img/image.png" alt="">
                 <div class="data">
-                    <h1>Top 50: Argentina</h1>
-                    <p>Tu actualización diaria de las canciones más escuchadas ahora mismo en Argentina.</p>
-                    <span><img src="assets/img/Spotify_icon.png" alt=""> Spotify · guardada 1.564.426 veces</span>
+                    <h1>Álbum</h1>
+                    <p>Descripción</p>
+                    <span> reproducciones · guardada </span>
                 </div>
+                -->
             </div>
             <div class="main-list">
                 <div class="list-options">
@@ -103,11 +105,12 @@
                                 <th>Título</th>
                                 <th>Reproducciones</th>
                                 <th></th>
-                                <th>Álbum</th>
+                                <th>Fecha en la que se añadió</th>
                                 <th><i class="fa-regular fa-clock"></i></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="songsList">
+                            <!--
                             <tr class="selectable">
                                 <th><h4>1</h4></th>
                                 <th>
@@ -124,7 +127,7 @@
                                 <th><h4>Álbum</h4></th>
                                 <th><h4>3:18</h4></th>
                             </tr>
-                            
+                            -->
                         </tbody>
                     </table>   
                 </div>
@@ -132,24 +135,9 @@
         </section>
     </main>
 
-    <!--
-    <table>				
-    	<thead>
-			<tr>
-    			<th>Nombre</th>
-				<th>Descripcion</th>
-    			<th>Genero</th>
-    			<th>Calificacion</th>
-    		</tr>
-    	</thead>
-    	<tbody  id="movies">
-                        
-    	</tbody>
-    </table>
-    -->
-
     <footer>
-        <section class="player">
+        <section class="player" id="player">
+            <!--
             <div class="player-1">
                 <img src="assets/img/image.png" alt="">
                 <span>
@@ -157,7 +145,7 @@
                     <p>Artista</p>
                 </span>
             </div>
-            <div class="player-2">
+            <div class="player-2" id="player">
                 <audio controls>
                     <source src="assets/mp3/I love a rainy night.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
@@ -165,6 +153,7 @@
             </div>
             <div class="player-3">
             </div>
+            -->
         </section>
     </footer>
     <script src="js/api.js"></script>
