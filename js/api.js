@@ -82,6 +82,9 @@ const start = async () => {
   <div class="player-3">
   </div>
   `
+
+  let button = document.getElementById("giantPlay");
+  button.setAttribute("onclick", "changeSong('"+firstSong.id+"')");
 }
 
 start()
@@ -126,6 +129,9 @@ async function changePlaylist(id){
         <div class="t5">${secondsToString(s.duration)}</div>
       </button>
     `
+
+    let button = document.getElementById("giantPlay");
+    button.setAttribute("onclick", "changeSong('"+currentPlaylistSongs.data[0].id+"')");
   });
 }
 
@@ -144,7 +150,7 @@ async function changeSong(id){
       <p>${currentSong.user.name}</p>
     </span>
   </div>
-  <div class="player-2" id="player">
+  <div class="player-2" id="song-player">
     <audio controls id="audio">
       <source src="https://audius-discovery-2.theblueprint.xyz/v1/tracks/${currentSong.id}/stream?app_name=SpotifyClon" type="audio/mpeg">
       Your browser does not support the audio element.
@@ -153,6 +159,9 @@ async function changeSong(id){
   <div class="player-3">
   </div>
   `
+
+  let audio = document.getElementById("audio");
+  audio.play();
 }
 
 function secondsToString(seconds) {
