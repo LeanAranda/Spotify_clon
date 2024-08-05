@@ -396,6 +396,10 @@ h1{
     justify-content: center;
 }
 
+.selected h3{
+    color: #1ed760;
+}
+
 .player{
     height: 100%;
     width: 100%;
