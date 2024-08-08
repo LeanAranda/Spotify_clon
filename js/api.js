@@ -92,6 +92,24 @@ async function changeSong(id, autoplay, current){
   let player = document.getElementById("player");
 
   player.innerHTML = `
+    <img src="${currentSong.artwork['150x150']}" alt="">
+      <span>
+        <h4>${currentSong.title}</h4>
+        <p>${currentSong.user.name}</p>
+      </span>
+  `
+
+  let audio = document.getElementById("audio");
+  
+  audio.src= "https://audius-discovery-2.theblueprint.xyz/v1/tracks/"+currentSong.id+"/stream?app_name=SpotifyClon"
+
+  /*
+  audio.innerHTML = `
+    <source src="https://audius-discovery-2.theblueprint.xyz/v1/tracks/${currentSong.id}/stream?app_name=SpotifyClon" type="audio/mpeg">
+    Your browser does not support the audio element.
+  `
+  /*
+  player.innerHTML = `
   <div class="player-1">
     <img src="${currentSong.artwork['150x150']}" alt="">
     <span>
@@ -110,8 +128,9 @@ async function changeSong(id, autoplay, current){
     <button style="color: black; background-color:white; padding:5px" onclick="changeSongRight()">siguiente</button>
   </div>
   `
+  */
+
   if(autoplay){
-    let audio = document.getElementById("audio");
     audio.play();
   }
 
@@ -129,7 +148,6 @@ async function changeSong(id, autoplay, current){
     currentPlaylistSongsAux = currentPlaylistSongs
   }
 
-  let audio = document.getElementById("audio");
   audio.onended = function() {
     changeSongRight()
   };

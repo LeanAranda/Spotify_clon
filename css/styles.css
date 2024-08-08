@@ -416,6 +416,7 @@ h1{
     padding: 5px;
     display: flex;
     align-items: center;
+    padding-right: 30px;
 }
 
 .player-1 span{
@@ -437,15 +438,151 @@ h1{
     width: 40%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
 
 
 .player-3{
     height: 100%;
     width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 0 30px;
+    gap: 10px;
 }
+
+.progress{
+    display: flex;
+    width: 85%;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.volume{
+    display: flex;
+    width: 95px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+audio{
+    display: none;
+}
+
+.player-buttons{
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.player-progress{   
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.player-button{
+    border: 0px;
+    background-color: transparent;
+}
+
+.play-pause{
+    border: 0px;
+    border-radius: 50%;
+    background-color: white;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+}
+
+.play-pause i{
+    color: #000000;
+}
+
+/*
+input[type="range"] {
+    
+    height: 5px;
+    accent-color: #ffffff;
+    width: 85%;
+}
+
+input[type="range"]:hover{
+    accent-color: #1ed760;
+}
+*/
+
+
+
+#progress-bar, #volume-bar{
+    width: 100%;
+}
+
+
+
+input[type="range"] {
+    margin: auto;
+    -webkit-appearance: none;
+    position: relative;
+    overflow: hidden;
+    height: 4px;
+    cursor: pointer;
+    border-radius: 0;
+  }
+  
+  ::-webkit-slider-runnable-track {
+    background: #4d4d4d;
+  }
+  
+  
+  /*
+   * 1. Set to 0 width and remove border for a slider without a thumb
+   * 2. Shadow is negative the full width of the input and has a spread 
+   *    of the width of the input.
+   */
+  
+  ::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 3px;
+    /* 1 */
+    height: 5px;
+    background: #fff;
+    box-shadow: -500px 0 0 500px white;
+    /* 2 */
+    border: 0;
+    /* 1 */
+  }
+  
+  input[type="range"]:hover::-webkit-slider-thumb{   
+    box-shadow: -500px 0 0 500px #1db954;    
+  }
+
+  ::-moz-range-track {
+    height: 0px;
+    background: #ddd;
+  }
+  
+  ::-moz-range-thumb {
+    background: #fff;
+    height: 0px;
+    width: 0px;
+    border: 0px solid #ff0000;
+    border-radius: 0 !important;
+    box-shadow: -500px 0 0 500px dodgerblue;
+    box-sizing: border-box;
+  }
+
+
+
+
+
+
+
+
 
 .hover-white:hover{
     cursor: pointer;

@@ -131,24 +131,36 @@
     </main>
 
     <footer>
-        <section class="player" id="player">
-            <!--
-            <div class="player-1">
-                <img src="assets/img/image.png" alt="">
-                <span>
-                    <h4>Canción</h4>
-                    <p>Artista</p>
-                </span>
+        <section class="player">
+            <div class="player-1" id="player">
+                
             </div>
-            <div class="player-2" id="player">
-                <audio controls id="audio">
-                    <source src="assets/mp3/I love a rainy night.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
+            <div class="player-2">
+                <audio id="audio" controls>
+                    
                 </audio>
+                <div class="player-buttons">
+                    <button onclick="changeSongLeft()" class="player-button hover-white"><i class="fa-solid fa-backward-step fa-xl"></i></button>
+                    <button onclick="" class="play-pause"><i class="fa-solid fa-play fa-lg"></i></button>
+                    <button onclick="changeSongRight()" class="player-button hover-white"><i class="fa-solid fa-forward-step fa-xl"></i></button>
+                </div>
+                <div class="player-progress">
+                    <p>-:--</p>
+                    <div class="progress">
+                        <input id="progress-bar" type="range" value="0" min="0" max="100" >
+                    </div>
+                    <p>-:--</p>
+                </div>
             </div>
             <div class="player-3">
+                <button class="player-button hover-white">
+                    <i class="fa-solid fa-volume-high"></i>
+                </button>
+                <div class="volume">
+                    <input id="volume-bar" type="range" value="50" min="0" max="100" >
+                </div>
+                
             </div>
-            -->
         </section>
     </footer>
     <script src="js/api.js"></script>
