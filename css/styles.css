@@ -6,15 +6,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/*
-.montserrat-<uniquifier> {
-  font-family: "Montserrat", sans-serif;
-  font-family: proxima_nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
-}
-*/
+
 
 body{
     background-color: #000000;
@@ -52,7 +44,7 @@ h1{
     /*
     font-size: 8vh;
     */
-    font-size: 400%;
+    font-size: 350%;
 }
 
 .navigation{
@@ -143,16 +135,18 @@ h1{
 .lib-3{
     display: flex;
     flex-direction: column;
-    gap: 15px;
     overflow-y: scroll;
-    -ms-overflow-style: none; /* for Internet Explorer, Edge */
-    scrollbar-width: none; /* for Firefox */
+    /*
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+    */
 }
 
 .lib-3 nav{
     padding: 0px 15px 0px 10px;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 .lib-3 nav div{
@@ -177,7 +171,7 @@ h1{
     align-items: center;
 }
 
-/*.lib-element */img{
+img{
     height: 100%;
     border-radius: 3px;
     max-height: 225px;
@@ -207,11 +201,12 @@ h1{
 
 .main{
     width: calc(100% - 420px);
-    /*background-color: #453286;*/
     background-color: #121212;
-    overflow-y: scroll;
-    -ms-overflow-style: none; /* for Internet Explorer, Edge */
-    scrollbar-width: none; /* for Firefox */
+    overflow-y: auto;
+    
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+    
 }
 
 .main-nav{
@@ -503,19 +498,6 @@ audio{
     color: #000000;
 }
 
-/*
-input[type="range"] {
-    
-    height: 5px;
-    accent-color: #ffffff;
-    width: 85%;
-}
-
-input[type="range"]:hover{
-    accent-color: #1ed760;
-}
-*/
-
 
 
 #progress-bar, #volume-bar{
@@ -537,24 +519,15 @@ input[type="range"] {
   ::-webkit-slider-runnable-track {
     background: #4d4d4d;
   }
-  
-  
-  /*
-   * 1. Set to 0 width and remove border for a slider without a thumb
-   * 2. Shadow is negative the full width of the input and has a spread 
-   *    of the width of the input.
-   */
+
   
   ::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 3px;
-    /* 1 */
     height: 5px;
     background: #fff;
     box-shadow: -500px 0 0 500px white;
-    /* 2 */
     border: 0;
-    /* 1 */
   }
   
   input[type="range"]:hover::-webkit-slider-thumb{   
@@ -580,15 +553,48 @@ input[type="range"] {
 
 
 
+::-webkit-scrollbar {
+    width: 12px; 
+}
+
+
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ffffff70; 
+}
+
+.lib-3:hover::-webkit-scrollbar-thumb{
+    background: #ffffff4b;
+    transition: 0.5s;
+}
 
 
 
+
+button:disabled i{
+    color: #333333;
+}
 
 .hover-white:hover{
     cursor: pointer;
     a, i, button{
         color:white;
         transition: 0.4s;
+    }
+}
+
+.hover-white:disabled:hover{
+    a, i, button{
+        color: #333333;
     }
 }
 
@@ -605,9 +611,6 @@ input[type="range"] {
 }
 
 .selectable:hover{
-    /*
-    background-color: #1f1f1f; 
-    */
     background-color: #ffffff2a; 
     cursor: pointer;
 }

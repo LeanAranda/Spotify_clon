@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify clon</title>
+    <title>Spotify</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="shortcut icon" href="assets/img/Spotify_icon.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/a9c210698a.js" crossorigin="anonymous"></script>
@@ -58,32 +58,18 @@
                         </div>
                     </nav>
                     <div class="lib">
-                    <!--
-                        <button class="lib-element selectable" onclick="changePlaylist('AMdrkK7')">
-                            <img src="assets/img/image.png" alt="">
-                            <span>
-                                <h4>Album</h4>
-                                <p>Lista · Spotify</p>
-                            </span>
-                        </button>
-                    -->
+
                     </div>
                 </div>
             </div>
         </section>
         <section class="main">
+
             <nav class="main-nav">
                 <span class="selectable"><i class="fa-regular fa-user"></i></span>
             </nav>
             <div class="main-title" id="title">
-                <!--
-                <img src="assets/img/image.png" alt="">
-                <div class="data">
-                    <h1>Álbum</h1>
-                    <p>Descripción</p>
-                    <span> reproducciones · guardada </span>
-                </div>
-                -->
+
             </div>
             <div class="main-list">
                 <div class="list-options">
@@ -106,64 +92,56 @@
                             <span class="t3">Reproducciones</span>
                             <span class="t4">Fecha en la que se añadió</span>
                             <span class="t5"><i class="fa-regular fa-clock"></i></span>
-                        </div> 
+                        </div>
                     </div>
                     <div class="songsList" id="songsList">
-                        <!--
-                        <button class="table-song selectable">
-                            <div class="t1">1</div>
-                            <div class="t2">
-                                <img src="assets/img/image.png" alt="">
-                                <span>
-                                    <h3>Canción</h3>
-                                    <p>Artista</p>
-                                </span>
-                            </div>
-                            <div class="t3">411.012</div>
-                            <div class="t4">Fecha</div>
-                            <div class="t5">3:18</div>
-                        </button>
-                        -->
+
                     </div>
                 </div>
             </div>
+
+
         </section>
     </main>
 
     <footer>
         <section class="player">
             <div class="player-1" id="player">
-                
+
             </div>
             <div class="player-2">
                 <audio id="audio" controls>
-                    
+
                 </audio>
                 <div class="player-buttons">
-                    <button onclick="changeSongLeft()" class="player-button hover-white"><i class="fa-solid fa-backward-step fa-xl"></i></button>
-                    <button onclick="" class="play-pause"><i class="fa-solid fa-play fa-lg"></i></button>
-                    <button onclick="changeSongRight()" class="player-button hover-white"><i class="fa-solid fa-forward-step fa-xl"></i></button>
+                    <button onclick="changeSongLeft()" class="player-button hover-white" id="prevSong"><i
+                            class="fa-solid fa-backward-step fa-xl"></i></button>
+                    <button onclick="play_pause()" class="play-pause" id="play-pause"><i
+                            class="fa-solid fa-play fa-lg"></i></button>
+                    <button onclick="changeSongRight()" class="player-button hover-white" id="nextSong"><i
+                            class="fa-solid fa-forward-step fa-xl"></i></button>
                 </div>
                 <div class="player-progress">
-                    <p>-:--</p>
+                    <p id="current-time">-:--</p>
                     <div class="progress">
-                        <input id="progress-bar" type="range" value="0" min="0" max="100" >
+                        <input id="progress-bar" type="range" value="0" min="0">
                     </div>
-                    <p>-:--</p>
+                    <p id="total-time">-:--</p>
                 </div>
             </div>
             <div class="player-3">
-                <button class="player-button hover-white">
+                <button class="player-button hover-white" id="mute-button">
                     <i class="fa-solid fa-volume-high"></i>
                 </button>
                 <div class="volume">
-                    <input id="volume-bar" type="range" value="50" min="0" max="100" >
+                    <input id="volume-control" type="range" min="0" max="1" step="0.01" value="1">
                 </div>
-                
+
             </div>
         </section>
     </footer>
     <script src="js/api.js"></script>
+    <script src="js/audio.js"></script>
 </body>
 
 </html>

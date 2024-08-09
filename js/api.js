@@ -2,6 +2,7 @@ var currentPlaylist
 var currentPlaylistSongs
 var currentPlaylistSongsAux
 var currentSong
+var index
 
 const start = async () => {
 
@@ -59,13 +60,13 @@ async function changePlaylist(id){
   let songsList = document.getElementById("songsList");
   songsList.innerHTML = ``
 
-  let index = 0
+  let indexSong = 0
 
   currentPlaylistSongs.data.forEach( s => {
-    index ++
+    indexSong ++
     songsList.innerHTML += `
       <button class="table-song selectable" onclick="changeSong('${s.id}', true, true)" id="${s.id}">
-        <div class="t1">${index}</div>
+        <div class="t1">${indexSong}</div>
         <div class="t2">
           <img src="${s.artwork['150x150']}" alt="">
           <span>
@@ -103,32 +104,11 @@ async function changeSong(id, autoplay, current){
   
   audio.src= "https://audius-discovery-2.theblueprint.xyz/v1/tracks/"+currentSong.id+"/stream?app_name=SpotifyClon"
 
-  /*
-  audio.innerHTML = `
-    <source src="https://audius-discovery-2.theblueprint.xyz/v1/tracks/${currentSong.id}/stream?app_name=SpotifyClon" type="audio/mpeg">
-    Your browser does not support the audio element.
-  `
-  /*
-  player.innerHTML = `
-  <div class="player-1">
-    <img src="${currentSong.artwork['150x150']}" alt="">
-    <span>
-      <h4>${currentSong.title}</h4>
-      <p>${currentSong.user.name}</p>
-    </span>
-  </div>
-  <div class="player-2" id="song-player">
-    <audio controls id="audio">
-      <source src="https://audius-discovery-2.theblueprint.xyz/v1/tracks/${currentSong.id}/stream?app_name=SpotifyClon" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-  </div>
-  <div class="player-3" style="display: flex; align-items:center;">
-    <button style="color: black; background-color:white; padding:5px" onclick="changeSongLeft()">anterior</button>
-    <button style="color: black; background-color:white; padding:5px" onclick="changeSongRight()">siguiente</button>
-  </div>
-  `
-  */
+  let totalTime = document.getElementById("total-time")
+  totalTime.textContent = secondsToString(currentSong.duration)
+
+  let currentTime = document.getElementById("current-time")
+  currentTime.textContent = "0:00"
 
   if(autoplay){
     audio.play();
@@ -151,27 +131,33 @@ async function changeSong(id, autoplay, current){
   audio.onended = function() {
     changeSongRight()
   };
+
+  index = currentPlaylistSongsAux.data.findIndex(s => s.id==currentSong.id);
+  let prevSong = document.getElementById("prevSong")
+  let nextSong = document.getElementById("nextSong")
+
+  if(index == 0){
+    prevSong.disabled = true
+  }else{
+    prevSong.disabled = false
+  }
+
+  if(index == currentPlaylistSongsAux.data.length -1){
+    nextSong.disabled = true
+  }else{
+    nextSong.disabled = false
+  }
 }
 
 function changeSongLeft(){
-  
-  let index = currentPlaylistSongsAux.data.findIndex(s => s.id==currentSong.id);
-  console.log(index)
-  
   if(index != 0){
     changeSong(currentPlaylistSongsAux.data[index-1].id, true, false)
-    console.log("cancion anterior")
   }
 }
 
 function changeSongRight(){
-  
-  let index = currentPlaylistSongsAux.data.findIndex(s => s.id==currentSong.id);
-  console.log(index)
-  
   if(index < currentPlaylistSongsAux.data.length){
     changeSong(currentPlaylistSongsAux.data[index+1].id, true, false)
-    console.log("cancion siguiente")
   }
 }
 
