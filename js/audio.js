@@ -5,6 +5,7 @@ const muteButton = document.getElementById("mute-button")
 const progressBar = document.getElementById("progress-bar")
 const currentTimeDisplay = document.getElementById("current-time");
 const totalTimeDisplay = document.getElementById("total-time");
+var input = false
 
 muteButton.addEventListener("click", () => {
 
@@ -60,11 +61,19 @@ audio.addEventListener("timeupdate", () => {
     currentTimeDisplay.textContent = `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds}`;
 
     progressBar.setAttribute("max", duration)
-    progressBar.value = currentTime
+
+    if(!input){
+        progressBar.value = currentTime
+    }
+    
 });
 
+progressBar.oninput = () => {
+    input = true
+}
 
 progressBar.onchange = () => {
     audio.currentTime = progressBar.value;
+    input = false
 }
 
