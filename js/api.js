@@ -3,10 +3,17 @@ var currentPlaylistSongs
 var currentPlaylistSongsAux
 var currentSong
 var index
+var host
 
 const start = async () => {
 
-  const responsePlaylist = await fetch('https://audius-discovery-2.theblueprint.xyz/v1/playlists/trending?app_name=SpotifyClon')
+  const sample =  (arr) => arr[Math.floor(Math.random() * arr.length)]
+  host = await fetch('https://api.audius.co')
+  .then(r => r.json())
+  .then(j => j.data)
+  .then(d => sample(d))
+
+  responsePlaylist = await fetch(host + '/v1/playlists/trending?app_name=SpotifyClon')
   const playlist = await responsePlaylist.json()
   const firstPlaylist = playlist.data[0]
   
@@ -28,7 +35,7 @@ const start = async () => {
 
   changePlaylist(firstPlaylist.id)
 
-  const responseSongs = await fetch('https://audius-discovery-2.theblueprint.xyz/v1/playlists/'+firstPlaylist.id+'/tracks?app_name=SpotifyClon')
+  const responseSongs = await fetch(host + '/v1/playlists/'+firstPlaylist.id+'/tracks?app_name=SpotifyClon')
   const songs = await responseSongs.json()
 
   const firstSong = songs.data[0]
@@ -40,7 +47,8 @@ const start = async () => {
 start()
 
 async function changePlaylist(id){
-  let responseCurrentPlaylist = await fetch('https://audius-discovery-1.cultur3stake.com/v1/playlists/'+id+'?app_name=SpotifyClon')
+  
+  let responseCurrentPlaylist = await fetch(host + '/v1/playlists/'+id+'?app_name=SpotifyClon')
   currentPlaylist = await responseCurrentPlaylist.json()
   currentPlaylist = currentPlaylist.data[0]
 
@@ -54,7 +62,7 @@ async function changePlaylist(id){
     </div>
   `
   
-  let responseCurrentPlaylistSongs = await fetch('https://audius-discovery-2.theblueprint.xyz/v1/playlists/'+id+'/tracks?app_name=SpotifyClon')
+  let responseCurrentPlaylistSongs = await fetch(host + '/v1/playlists/'+id+'/tracks?app_name=SpotifyClon')
   currentPlaylistSongs = await responseCurrentPlaylistSongs.json()
   
   let songsList = document.getElementById("songsList");
@@ -86,7 +94,7 @@ async function changePlaylist(id){
 }
 
 async function changeSong(id, autoplay, current){
-  let responseCurrentSong = await fetch('https://audius-discovery-1.cultur3stake.com/v1/tracks/'+id+'?app_name=SpotifyClon')
+  let responseCurrentSong = await fetch(host + '/v1/tracks/'+id+'?app_name=SpotifyClon')
   currentSong = await responseCurrentSong.json()
   currentSong = currentSong.data
 
@@ -102,7 +110,7 @@ async function changeSong(id, autoplay, current){
 
   let audio = document.getElementById("audio");
   
-  audio.src= "https://audius-discovery-2.theblueprint.xyz/v1/tracks/"+currentSong.id+"/stream?app_name=SpotifyClon"
+  audio.src= host + "/v1/tracks/"+currentSong.id+"/stream?app_name=SpotifyClon"
 
   let totalTime = document.getElementById("total-time")
   totalTime.textContent = secondsToString(currentSong.duration)
